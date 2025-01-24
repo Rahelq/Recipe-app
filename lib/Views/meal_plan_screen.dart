@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:recipe_app/Utils/constants.dart';
 
 class MealPlanScreen extends StatefulWidget {

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:recipe_app/Services/authentication.dart';
 import 'package:recipe_app/Utils/constants.dart';
+import 'package:recipe_app/Views/login.dart';
+import 'package:recipe_app/Widgets/button.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -46,16 +49,16 @@ class SettingScreen extends StatelessWidget {
             },
           ),
           const Divider(),
-          ListTile(
-            leading: const Icon(Iconsax.logout, color: Colors.red),
-            title: const Text(
-              "Logout",
-              style: TextStyle(color: Colors.red),
-            ),
-            onTap: () {
-              // Handle logout
-            },
-          ),
+          MyButtons(
+              onTap: () async {
+                await AuthMethod().signOut();
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const LoginScreen(),
+                  ),
+                );
+              },
+              text: "Log Out"),
         ],
       ),
     );

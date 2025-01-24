@@ -83,14 +83,4 @@ class _AppMainScreenState extends State<AppMainScreen> {
       body: page[selectedIndex],
     );
   }
-
-  // navBarPage(iconName) {
-  //   return Center(
-  //     child: Icon(
-  //       iconName,
-  //       size: 100,
-  //       color: kprimaryColor,
-  //     ),
-  //   );
-  // }
 }
